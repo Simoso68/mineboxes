@@ -1,0 +1,32 @@
+{
+    "short_name": "MineBoxes",
+    "name": "MineBoxes",
+    "icons": [
+      {
+        "src": "/images/chest192.webp",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/images/chest512.webp",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "id": "/",
+    "start_url": "/",
+    "background_color": "#242424",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#242424",
+    "shortcuts": [
+      {
+        "name": "MineBoxes",
+        "short_name": "MineBoxes",
+        "description": "MineBoxes free Lootbox app",
+        "url": "/",
+        "icons": [{"src": "/images/chest_static.webp", "sizes": "320x320"}]
+      }
+    ],
+    "description": "MineBoxes free Lootbox app"
+  }
