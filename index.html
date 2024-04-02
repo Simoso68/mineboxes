@@ -10,6 +10,10 @@
 </head>
 
 <script src="script.js"></script>
+<script>if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js")
+}
+</script>
 <body id="body">
     <img src="images/chest_static.webp" onclick="openbox()" id="BOX">
 </body>

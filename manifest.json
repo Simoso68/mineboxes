@@ -13,8 +13,7 @@
         "sizes": "512x512"
       }
     ],
-    "id": "/",
-    "start_url": "/",
+    "start_url": "/mineboxes",
     "background_color": "#242424",
     "display": "standalone",
     "scope": "/",
