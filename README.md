@@ -12,4 +12,4 @@ Well, now you can!
 
 ## Credits
 
-All images used in this project are fully owned by [Mojang AB](https://mojang.com).
+All images and sounds used in this project are fully owned by [Mojang AB](https://mojang.com).

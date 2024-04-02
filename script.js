@@ -111,7 +111,7 @@ function findKeyByValueInList(object, searchValue) {
 }
 
 function roll() {
-    let audio = new Audio("xp.mp3")
+    let audio = new Audio("audio/xp.mp3")
     audio.play()
     let rollnum = Math.floor(Math.random() * 1000) + 1
     let key = findKeyByValueInList(ROLL_NUMBERS, rollnum)
@@ -139,6 +139,11 @@ function roll() {
     }
 
     console.log("ROLLED ITEM: " + key)
+
+    if (key == "Dragon Egg") {
+        daud = new Audio("audio/dragon.mp3")
+        daud.play()
+    }
 
     document.body.innerHTML = document.body.innerHTML + "<div id='overlay'><img src='" + image + "' class='looted-item' style='filter: drop-shadow(0px 0px 100px " +  rarity_color + ");'><p id='item-title' style='color:" + rarity_color + "'>" + key + "</p><div id='ok-btn' onclick='rollback()'>Okay</div></div>"
 }
