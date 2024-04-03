@@ -208,7 +208,7 @@ function view_inv() {
 
     }
 
-    invboard = invboard + "</div>"
+    invboard = invboard + "<br></div>"
 
     document.body.innerHTML = document.body.innerHTML + "<div id='overlay-inv'>" + invboard + "<div id='close-btn' onclick='close_inv()'>Close</div></div>"
 }

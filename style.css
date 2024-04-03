@@ -9,12 +9,14 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 #BOX {
     position: fixed;
     z-index: 0;
     margin-bottom: 10vh;
     grid-gap: 0px 0px;
 }
+
 #overlay {
     background: rgba(0,0,0,0.6); 
     width:      100%;
@@ -27,6 +29,7 @@ body {
     display: flex;
     justify-content: center;
 }
+
 .looted-item {
     display: block;
     top:        10vh; 
@@ -34,6 +37,7 @@ body {
     width: 30vw;
     max-width: 400px;
 }
+
 #item-title {
     position: fixed;
     font-size: arial;
@@ -42,11 +46,13 @@ body {
     width: 90vw;
     top: 50vh;
 }
+
 #ok-btn {
     background-color: #00bd10;
     border-radius: 12px;
     width: 60vw;
     max-width: 400px;
+    min-width: 250px;
     height: 70px;
     line-height: 70px;
     font-size: 40px;
@@ -56,9 +62,11 @@ body {
     cursor: pointer;
     transition: 0.5s;
 }
+
 #ok-btn:hover {
     background-color: #00810b;
 }
+
 #inv-btn {
     margin-top: 85vh;
     min-width: 250px;
@@ -75,14 +83,17 @@ body {
     text-align: center;
     transition: 0.5s;
 }
+
 #inv-btn:hover {
     background-color: #00639c;
 }
+
 #close-btn {
     top: 85vh;
     position: absolute;
     background-color: #ff0000;
     border-radius: 12px;
+    min-width: 250px;
     width: 60vw;
     max-width: 400px;
     height: 70px;
@@ -93,9 +104,11 @@ body {
     cursor: pointer;
     transition: 0.5s;
 }
+
 #close-btn:hover {
     background-color: #c20101;
 }
+
 #overlay-inv {
     background: rgba(0,0,0,0.6); 
     width:      100%;
@@ -108,9 +121,29 @@ body {
     display: flex;
     justify-content: center;
     font-family: minecraft;
+    overflow: hidden;
 }
 
-.invboard {
+#invboard {
+    border-radius: 12px;
     position: fixed;
     top: 10vh;
+    width: 40vw;
+    min-width: 275px;
+    max-width: 600px;
+    height: 70vh;
+    background-color: rgb(53, 53, 53);
+    overflow-y: scroll;
+    scrollbar-color: rgba(0,0,0,0);
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+}
+
+#invboard {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+#invboard::-webkit-scrollbar { 
+    display: none;
 }
