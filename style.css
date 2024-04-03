@@ -2,19 +2,18 @@
 
 body {
     background-color: #242424;
-    display: grid;
-    flex-direction: column;
-    align-items: center;
+    display: flex;
     margin: 0;
     grid-template-rows: 100vh;
     grid-gap: 0px 0px;
+    justify-content: center;
+    align-items: center;
 }
 #BOX {
-    display: subgrid;
-    grid-column: 2 / 3;
-    grid-row: 1 / 1;
+    position: fixed;
     z-index: 0;
     margin-bottom: 10vh;
+    grid-gap: 0px 0px;
 }
 #overlay {
     background: rgba(0,0,0,0.6); 
@@ -59,4 +58,59 @@ body {
 }
 #ok-btn:hover {
     background-color: #00810b;
+}
+#inv-btn {
+    margin-top: 85vh;
+    min-width: 250px;
+    background-color: #0078bd;
+    border-radius: 12px;
+    width: 60vw;
+    max-width: 400px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 40px;
+    color: white;
+    font-family: minecraft;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.5s;
+}
+#inv-btn:hover {
+    background-color: #00639c;
+}
+#close-btn {
+    top: 85vh;
+    position: absolute;
+    background-color: #ff0000;
+    border-radius: 12px;
+    width: 60vw;
+    max-width: 400px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 40px;
+    color: white;
+    font-family: minecraft;
+    cursor: pointer;
+    transition: 0.5s;
+}
+#close-btn:hover {
+    background-color: #c20101;
+}
+#overlay-inv {
+    background: rgba(0,0,0,0.6); 
+    width:      100%;
+    height:     100%; 
+    z-index:    10;
+    top:        0; 
+    left:       0; 
+    position:   fixed;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-family: minecraft;
+}
+
+.invboard {
+    position: fixed;
+    top: 10vh;
 }

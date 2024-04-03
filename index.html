@@ -9,6 +9,7 @@
     <link rel="manifest" href="manifest.json">
 </head>
 
+<script src="inventory.js"></script>
 <script src="script.js"></script>
 <script>if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("service-worker.js")
@@ -16,5 +17,6 @@
 </script>
 <body id="body">
     <img src="images/chest_static.webp" onclick="openbox()" id="BOX">
+    <div onclick="view_inv()" id="inv-btn">Inventory</div>
 </body>
 </html>

@@ -33,6 +33,24 @@ const ITEMS = [
     {name: "Dragon Egg", image: "images/dragon_egg.webp", chance: 1},
 ]
 
+let ITEM_COUNTER = {}
+let set_base_cookie = true
+
+for (var item_counter_index = 0; item_counter_index < ITEMS.length; item_counter_index++) {
+    ITEM_COUNTER[ITEMS[item_counter_index]["name"]] = 0
+}
+
+for (var item_counter_index2 = 0; item_counter_index2 < ITEMS.length; item_counter_index2++) {
+    if (getInventory()[ITEMS[item_counter_index2]["name"]] > 0) {
+        set_base_cookie = false
+    }
+}
+
+if (set_base_cookie) {
+    console.log(set_base_cookie)
+    setCookie("inventory", JSON.stringify(ITEM_COUNTER), 3650000)
+}
+
 let RARITIES = {}
 let NAME_TO_PATH = {}
 let ROLL_NUMBERS = {}
@@ -118,6 +136,7 @@ function roll() {
     let image = NAME_TO_PATH[key]
     let rarity = RARITIES[key]
     let rarity_color
+    globalThis.key = key
 
     if (rarity == "common") {
         rarity_color = "#fff"
@@ -145,11 +164,12 @@ function roll() {
         daud.play()
     }
 
-    document.body.innerHTML = document.body.innerHTML + "<div id='overlay'><img src='" + image + "' class='looted-item' style='filter: drop-shadow(0px 0px 100px " +  rarity_color + ");'><p id='item-title' style='color:" + rarity_color + "'>" + key + "</p><div id='ok-btn' onclick='rollback()'>Okay</div></div>"
+    document.body.innerHTML = document.body.innerHTML + "<div id='overlay'><img src='" + image + "' class='looted-item' style='filter: drop-shadow(0px 0px 100px " +  rarity_color + ");'><p id='item-title' style='color:" + rarity_color + "'>" + key + "</p><div id='ok-btn' onclick='rollback()'>Collect</div></div>"
 }
 
 function rollback() {
-    document.body.innerHTML = '<img src="images/chest_static.webp" onclick="openbox()" id="BOX">'
+    updateInventory(key, getInventory()[globalThis.key] + 1)
+    document.body.innerHTML = '<img src="images/chest_static.webp" onclick="openbox()" id="BOX"><div onclick="view_inv()" id="inv-btn">Inventory</div>'
 }
 
 function openbox() {
@@ -158,4 +178,41 @@ function openbox() {
     image.classList.add("shake")
 
     roll()
+}
+
+function view_inv() {
+    let invboard = "<div id='invboard'><br>"
+    for (var inv_item_index = 0; inv_item_index < ITEMS.length; inv_item_index++) {
+        rarity = RARITIES[ITEMS[inv_item_index]["name"]]
+
+        if (rarity == "common") {
+            rarity_color = "#fff"
+        }
+        else if (rarity == "uncommon") {
+            rarity_color = "#00cc00"
+        }
+        else if (rarity == "rare") {
+            rarity_color = "#0066ff"
+        }
+        else if (rarity == "epic") {
+            rarity_color = "#cc00ff"
+        }
+        else if (rarity == "legendary") {
+            rarity_color = "#ffcc00"
+        }
+        else if (rarity == "mythic") {
+            rarity_color = "#ff00ff"
+        }
+
+        invboard = invboard + "<span style='color:" + rarity_color + "'>" + ITEMS[inv_item_index]["name"] + "</span><span style='color: white'> : </span><span style='color: #00e613'>" + getInventory()[ITEMS[inv_item_index]["name"]] + "</span><br>"
+
+    }
+
+    invboard = invboard + "</div>"
+
+    document.body.innerHTML = document.body.innerHTML + "<div id='overlay-inv'>" + invboard + "<div id='close-btn' onclick='close_inv()'>Close</div></div>"
+}
+
+function close_inv() {
+    document.body.innerHTML = '<img src="images/chest_static.webp" onclick="openbox()" id="BOX"><div onclick="view_inv()" id="inv-btn">Inventory</div>'
 }
