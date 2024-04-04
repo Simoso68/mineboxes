@@ -1,40 +1,51 @@
 const ITEMS = [
-    {name: "Dirt", image: "images/dirt.webp", chance: 120},
-    {name: "Oak Log", image: "images/oak_log.webp", chance: 100},
-    {name: "Crafting Table", image: "images/crafting_table.webp", chance: 70},
-    {name: "Cobblestone", image: "images/cobble_stone.webp", chance: 70},
-    {name: "Wheat", image: "images/wheat.webp", chance: 45},
-    {name: "Carrot", image: "images/carrot.webp", chance: 40},
-    {name: "Potato", image: "images/potato.webp", chance: 40},
-    {name: "Bread", image: "images/bread.webp", chance: 40},
-    {name: "Coal", image: "images/coal.webp", chance: 40},
-    {name: "Granite", image: "images/granite.webp", chance: 40},
-    {name: "Andesite", image: "images/andesite.webp", chance: 40},
-    {name: "Diorite", image: "images/diorite.webp", chance: 40},
-    {name: "Steak", image: "images/steak.webp", chance: 40},
-    {name: "Spruce Log", image: "images/spruce_log.webp", chance: 40},
-    {name: "Apple", image: "images/apple.webp", chance: 30},
-    {name: "Deepslate", image: "images/deepslate.webp", chance: 30},
-    {name: "Iron Ingot", image: "images/iron_ingot.webp", chance: 20},
-    {name: "Jungle Log", image: "images/jungle_log.webp", chance: 20},
-    {name: "Crimson Log", image: "images/crimson_log.webp", chance: 15},
-    {name: "Warped Log", image: "images/warped_log.webp", chance: 15},
-    {name: "Mangrove Log", image: "images/mangrove_log.webp", chance: 15},
-    {name: "Gold Ingot", image: "images/gold_ingot.webp", chance: 15},
-    {name: "Obsidian", image: "images/obsidian.webp", chance: 15},
-    {name: "Chorus Fruit", image: "images/chorus_fruit.webp", chance: 15},
-    {name: "Diamond", image: "images/diamond.webp", chance: 10},
-    {name: "Wither Skeleton Skull", image: "images/wither_skeleton_skull.webp", chance: 10},
-    {name: "Nether Star", image: "images/nether_star.webp", chance: 7},
-    {name: "Beacon", image: "images/beacon.webp", chance: 7},
-    {name: "Netherite Scrap", image: "images/netherite_scrap.webp", chance: 5},
-    {name: "Netherite Ingot", image: "images/netherite_ingot.webp", chance: 3},
-    {name: "Elytra", image: "images/elytra.webp", chance: 2},
+    {name: "Dirt", image: "images/dirt.webp", chance: 975},
+    {name: "Grass Block", image: "images/grass_block.webp", chance: 975},
+    {name: "Oak Log", image: "images/oak_log.webp", chance: 800},
+    {name: "Crafting Table", image: "images/crafting_table.webp", chance: 600},
+    {name: "Cobblestone", image: "images/cobble_stone.webp", chance: 600},
+    {name: "Wheat", image: "images/wheat.webp", chance: 400},
+    {name: "Carrot", image: "images/carrot.webp", chance: 400},
+    {name: "Potato", image: "images/potato.webp", chance: 400},
+    {name: "Bread", image: "images/bread.webp", chance: 400},
+    {name: "Coal", image: "images/coal.webp", chance: 400},
+    {name: "Steak", image: "images/steak.webp", chance: 400},
+    {name: "Spruce Log", image: "images/spruce_log.webp", chance: 350},
+    {name: "Apple", image: "images/apple.webp", chance: 350},
+    {name: "Granite", image: "images/granite.webp", chance: 350},
+    {name: "Andesite", image: "images/andesite.webp", chance: 350},
+    {name: "Diorite", image: "images/diorite.webp", chance: 350},
+    {name: "Deepslate", image: "images/deepslate.webp", chance: 300},
+    {name: "Iron Ingot", image: "images/iron_ingot.webp", chance: 200},
+    {name: "Jungle Log", image: "images/jungle_log.webp", chance: 200},
+    {name: "Crimson Log", image: "images/crimson_log.webp", chance: 150},
+    {name: "Warped Log", image: "images/warped_log.webp", chance: 150},
+    {name: "Mangrove Log", image: "images/mangrove_log.webp", chance: 150},
+    {name: "Gold Ingot", image: "images/gold_ingot.webp", chance: 150},
+    {name: "Obsidian", image: "images/obsidian.webp", chance: 120},
+    {name: "Chorus Fruit", image: "images/chorus_fruit.webp", chance: 120},
+    {name: "Diamond", image: "images/diamond.webp", chance: 100},
+    {name: "Wither Skeleton Skull", image: "images/wither_skeleton_skull.webp", chance: 100},
+    {name: "Netherite Scrap", image: "images/netherite_scrap.webp", chance: 60},
+    {name: "Netherite Ingot", image: "images/netherite_ingot.webp", chance: 40},
+    {name: "Nether Star", image: "images/nether_star.webp", chance: 25},
+    {name: "Beacon", image: "images/beacon.webp", chance: 25},
+    {name: "Elytra", image: "images/elytra.webp", chance: 9},
     {name: "Dragon Egg", image: "images/dragon_egg.webp", chance: 1},
 ]
 
+//TOTAL CHANCE CALCULATION
+//
+//let a = 0
+//for (var i = 0;i < ITEMS.length;i++) {
+//    a += ITEMS[i]["chance"]
+//}
+//
+//console.log(a)
+
 let ITEM_COUNTER = {}
 let set_base_cookie = true
+
 
 for (var item_counter_index = 0; item_counter_index < ITEMS.length; item_counter_index++) {
     ITEM_COUNTER[ITEMS[item_counter_index]["name"]] = 0
@@ -47,19 +58,35 @@ for (var item_counter_index2 = 0; item_counter_index2 < ITEMS.length; item_count
 }
 
 if (set_base_cookie) {
-    console.log(set_base_cookie)
+    console.log("NEW INVENTORY SAVE CREATED")
     setCookie("inventory", JSON.stringify(ITEM_COUNTER), 3650000)
 }
+
+let new_val_fix
+let inv = {}
+
+for (var inv_item_fix_index = 0;inv_item_fix_index < ITEMS.length; inv_item_fix_index++) {
+    if (getInventory()[ITEMS[inv_item_fix_index]["name"]] == null || getInventory()[ITEMS[inv_item_fix_index]["name"]] == undefined) {
+        console.log("ADDED NEW ITEM TO YOUR INVENTORY, WHICH DID NOT EXIST BEFORE")
+        new_val_fix = 0
+    }
+    else {
+        new_val_fix = getInventory()[ITEMS[inv_item_fix_index]["name"]]
+    }
+    inv[ITEMS[inv_item_fix_index]["name"]] = new_val_fix
+}
+
+setCookie("inventory", JSON.stringify(inv), 3650000)
 
 let RARITIES = {}
 let NAME_TO_PATH = {}
 let ROLL_NUMBERS = {}
 
-const COMMON = 50
-const UNCOMMON = 30
-const RARE = 15
-const EPIC = 10
-const LEGENDARY = 2
+const COMMON = 400
+const UNCOMMON = 250
+const RARE = 150
+const EPIC = 100
+const LEGENDARY = 5
 const MYTHIC = 1
 
 let items_index = 0
@@ -95,12 +122,11 @@ while (items_path_index < ITEMS.length) {
     items_path_index++
 }
 
-while (chances_index < 1000) {
+while (chances_index < 10000) {
     let item = ITEMS[items_rolln_index]
     let itemname = item["name"]
     let itemchance = item["chance"]
 
-    let new_chances_index = chances_index + itemchance
     let added = chances_index
     let temprolllist = []
 
@@ -131,7 +157,7 @@ function findKeyByValueInList(object, searchValue) {
 function roll() {
     let audio = new Audio("audio/xp.mp3")
     audio.play()
-    let rollnum = Math.floor(Math.random() * 1000) + 1
+    let rollnum = Math.floor(Math.random() * 10000) + 1
     let key = findKeyByValueInList(ROLL_NUMBERS, rollnum)
     let image = NAME_TO_PATH[key]
     let rarity = RARITIES[key]
