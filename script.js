@@ -29,9 +29,9 @@ const ITEMS = [
     {name: "Netherite Scrap", image: "images/netherite_scrap.webp", chance: 60},
     {name: "Netherite Ingot", image: "images/netherite_ingot.webp", chance: 40},
     {name: "Nether Star", image: "images/nether_star.webp", chance: 25},
-    {name: "Beacon", image: "images/beacon.webp", chance: 25},
-    {name: "Elytra", image: "images/elytra.webp", chance: 9},
-    {name: "Dragon Egg", image: "images/dragon_egg.webp", chance: 1},
+    {name: "Beacon", image: "images/beacon.webp", chance: 20},
+    {name: "Elytra", image: "images/elytra.webp", chance: 10},
+    {name: "Dragon Egg", image: "images/dragon_egg.webp", chance: 5},
 ]
 
 //TOTAL CHANCE CALCULATION
@@ -86,8 +86,8 @@ const COMMON = 400
 const UNCOMMON = 250
 const RARE = 150
 const EPIC = 100
-const LEGENDARY = 5
-const MYTHIC = 1
+const LEGENDARY = 10
+const MYTHIC = 5
 
 let items_index = 0
 let items_path_index = 0
